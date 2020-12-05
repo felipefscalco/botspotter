@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  vocation: MyString
+  level: 1
+  last_online: 2020-12-05 16:43:09
+  online: false
+  up_time: 1
+
+two:
+  name: MyString
+  vocation: MyString
+  level: 1
+  last_online: 2020-12-05 16:43:09
+  online: false
+  up_time: 1
