@@ -26,10 +26,10 @@ module Spotter
           last_online: Time.zone.now
         }
 
-        Spotter::Process.call(player)
-
-        Player.offline.update_all(up_time: 0)        
+        Spotter::Process.call(player)        
       end
+
+      Player.offline.update_all(up_time: 0)
 
     end
 
