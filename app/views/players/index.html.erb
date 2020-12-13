@@ -1,0 +1,20 @@
+<table class="table table-striped">
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col">Name</th>
+            <th>Vocation</th>
+            <th>Level</th>
+            <th>Uptime</th>
+        </tr>
+    </thead>
+    <tbody>
+        <%- @players.each do | player |%>
+            <tr>
+                <td><%= player.name%></td>
+                <td><%= player.vocation%></td>
+                <td class=""><%= player.level%></td>
+                <td><%= player.up_time%></td>
+            </tr>
+        <%end%>                 
+    </tbody>    
+</table>

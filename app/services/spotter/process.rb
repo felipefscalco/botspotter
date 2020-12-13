@@ -10,7 +10,7 @@ module Spotter
             new(player).call
         end
 
-        def call()
+        def call
           player = Player.find_by(name: player_info[:name])
 
           if player.nil?
@@ -22,6 +22,7 @@ module Spotter
             end
             
             player.last_online = player_info[:last_online]
+            player.online = true
 
             player.save
           end

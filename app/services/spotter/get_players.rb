@@ -7,8 +7,10 @@ module Spotter
     VOCATION=2
 
     def self.call
+      Player.update_all online: false
+
       agent = Mechanize.new
-      page = agent.get(ENV.fetch("OT_URL")) 
+      page = agent.get(ENV.fetch("OT_URLL")) 
       
       players_table = page.search('table#WorldOverViewList tr')
       players_table.shift #remove first element of array
@@ -26,6 +28,7 @@ module Spotter
 
         Spotter::Process.call(player)
 
+        Player.offline.update_all(up_time: 0)        
       end
 
     end
