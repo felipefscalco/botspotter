@@ -5,7 +5,7 @@ class PlayersController < ApplicationController
     #create post
 
     def index 
-        @players = Player.all
+        @players = Player.online
         
     end
 end
