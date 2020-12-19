@@ -23,6 +23,7 @@ module Spotter
             
             player.last_online = player_info[:last_online]
             player.level = player_info[:level]
+            player.vocation = player_info[:vocation]
             player.online = true
 
             player.save
