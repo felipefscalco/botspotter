@@ -2,9 +2,9 @@ module Spotter
 
   class GetPlayers
 
-    NAME=0
-    LEVEL=1
-    VOCATION=2
+    NAME=1
+    LEVEL=3
+    VOCATION=4
 
     def self.call
       Player.update_all online: false
