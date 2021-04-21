@@ -12,7 +12,7 @@ module Spotter
       agent = Mechanize.new
       page = agent.get(ENV.fetch("OT_URLL")) 
       
-      players_table = page.search('table#WorldOverViewList tr')
+      players_table = page.search('table#onlinelistTable tr')
       players_table.shift #remove first element of array
 
       players_table.each do | player_info |
