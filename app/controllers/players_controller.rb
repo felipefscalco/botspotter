@@ -5,6 +5,6 @@ class PlayersController < ApplicationController
     #create post
 
   def index
-    @players = Player.online.order(:up_time)
+    @players = Player.online
   end
 end
