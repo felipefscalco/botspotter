@@ -2,8 +2,8 @@ module Spotter
 
   class GetPlayers
 
-    NAME = 2
-    LEVEL = 4
+    NAME = 1
+    LEVEL = 2
     VOCATION = 3
 
     def self.call
@@ -11,7 +11,8 @@ module Spotter
 
       agent = Mechanize.new
       page = agent.get(ENV.fetch("OT_URLL"))
-      players_table = page.search('#onlinelistTable')
+      tables = page.search('table')
+      players_table = tables[1]
       players_info = players_table.search('tr')
       players_info.shift
 
