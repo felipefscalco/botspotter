@@ -2,17 +2,16 @@ module Spotter
 
   class GetPlayers
 
-    NAME = 1
-    LEVEL = 2
-    VOCATION = 3
+    NAME = 0
+    LEVEL = 1
+    VOCATION = 2
 
     def self.call
       Player.update_all online: false
 
       agent = Mechanize.new
       page = agent.get(ENV.fetch("OT_URLL"))
-      tables = page.search('table')
-      players_table = tables[18]
+      players_table = page.search('table#WorldOverViewList')
       players_info = players_table.search('tr')
       players_info.shift
 
